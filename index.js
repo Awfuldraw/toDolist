@@ -1,7 +1,4 @@
 
-//#2-3 들어야함
-
-
 function sayHello(name,age){   
     return `hello ${name} you are ${age} years old`;
 }
@@ -26,10 +23,22 @@ console.log(plus);
 console.log(multi);
 
 
-//나누기//
 
-const title = document.getElementById("title");
+const title = document.querySelector("#title");
 
-console.log(title);
 
-title.innerText = "changed from js";
+
+const  BASE_COLOR = "rgb(52, 73, 94)";
+const OTHER_COLOR = "#7f8c8d";
+const CLICKED_CLASS = "clicked";
+
+function handleClick(){
+  title.classList.toggle(CLICKED_CLASS);
+}
+
+function init(){
+    title.addEventListener("click", handleClick);
+}
+
+init();
+
