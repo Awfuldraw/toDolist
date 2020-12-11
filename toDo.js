@@ -1,4 +1,7 @@
 
+
+// 시발 컨트롤 시프트 
+
 const toDoForm = document.querySelector(".js-toDoform"),
     toDoInput = toDoForm.querySelector("input"),
     toDoList = document.querySelector(".js-toDoList");
@@ -28,14 +31,14 @@ function saveToDos(){
 function paintToDo(text){
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
-    delBtn.value = "○";
+    delBtn.value = "☎";
     delBtn.addEventListener("click",delToDo)
     const span = document.createElement("span");
     const newId = toDos.length + 1 ;
     span.innerText = text;
     li.appendChild(delBtn);
-    li.appendChild(span);   
     li.id =  newId;
+    li.appendChild(span);   
     toDoList.appendChild(li);
     const toDosObj = {
         text: text,
@@ -60,7 +63,7 @@ function loadToDos(){
         paintToDo(toDo.text);
       });
     }
-}
+}       
 
 
 function init(){
